@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d152930-e26e-46a6-8b22-b89ffa475594" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6db7e620-61fe-4d93-9b61-d5ff91e99959" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ghost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ghost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestGhostValidMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestGhostValidMoves.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +28,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1d152930-e26e-46a6-8b22-b89ffa475594" name="Default Changelist" comment="" />
+      <changelist id="6db7e620-61fe-4d93-9b61-d5ff91e99959" name="Default Changelist" comment="" />
       <created>1609950980594</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
