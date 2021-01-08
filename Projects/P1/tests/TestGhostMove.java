@@ -5,6 +5,6 @@ import java.io.*;
 public class TestGhostMove extends TestCase {
 
 	public void testGhostMove() throws FileNotFoundException{
-	
+		return null;
 	}
 }
