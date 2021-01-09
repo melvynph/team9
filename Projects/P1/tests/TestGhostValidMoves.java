@@ -9,7 +9,7 @@ public class TestGhostValidMoves extends TestCase {
 		MainFrame frame = new MainFrame();
 		//NoFrame frame = new NoFrame();
 
-		PacMan ghost = frame.addGhost(new Location (9,11), "name", Color.red);
+		Ghost ghost = frame.addGhost(new Location (9,11), "name", Color.red);
 
 		//frame.initPlayers();
 

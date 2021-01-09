@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6db7e620-61fe-4d93-9b61-d5ff91e99959" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestGhostValidMoves.java" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestGhostValidMoves.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
