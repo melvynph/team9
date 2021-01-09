@@ -19,6 +19,7 @@ public class PacMan{
 	}
 
 	public boolean move() {
+		
 		return false;
 	}
 
