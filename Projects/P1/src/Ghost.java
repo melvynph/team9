@@ -44,10 +44,6 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		if(is_pacman_in_range()){
-			return true;
-		} else{
-			return false;
-		}
+		
 	}
 }
