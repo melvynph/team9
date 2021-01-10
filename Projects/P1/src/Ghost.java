@@ -44,6 +44,6 @@ public class Ghost{
 	}
 
 	public boolean attack() {
-		
+
 	}
 }
