@@ -17,10 +17,6 @@ java -cp "src/" StartMenu
 Make sure you are on the project root folder/directory when running the commands.
 Running these commands should open the JFrame and allow you to play Automonous PacMan.
 
-### Submitting
-
-Once you complete each feature, you will submit a pull request from your feature to the main branch. Assign your project manager as a reviewer to this pull request and they will grade your work. Make sure to assign any pull requests from feature items to feature branches to your assigned cards. We will use this to grade your individual contributions.
-
 ## Functions
 This section contains all of the functions our team wrote and implemented.
 
