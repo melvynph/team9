@@ -65,9 +65,19 @@ public class Map{
 
 	public boolean attack(String Name) {
 		//update gameOver
-		return false;
+		if (locations.containsKey(Name)) {
+			Location loc = locations.get(Name);
+			Ghost ghost = new Ghost(Name, loc, this);
+			if (getLoc(loc).contains(Map.Type.Ghost) && ghost.is_ghost_in_range()) {
+				gameOver = true;
+				return gameOver;
+			}
+		}
+		else {
+			return false;
+		}
 	}
-	
+
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
