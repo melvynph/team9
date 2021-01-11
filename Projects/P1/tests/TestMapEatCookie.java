@@ -10,9 +10,9 @@ public class TestMapEatCookie {
 	public void testMapEatCookie() {
 		Frame frame = new Frame();
 		PacMan pacman1 = frame.addPacMan(new Location(0, 0));
-		assertTrue(frame.getMap().eatCookie("pacman") == null);
+		assertTrue(frame.getMap().eatCookie("pacman1") == null);
 		pacman.myLoc.shift(1, 1);
-		assertFalse(frame.getMap().eatCookie("pacman") == null);
+		assertFalse(frame.getMap().eatCookie("pacman1") == null);
 		//return null;
 	}
 }
