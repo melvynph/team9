@@ -54,6 +54,11 @@ public class Ghost{
 	}
 
 	public boolean move() {
+		ArrayList<Location> loc = this.get_valid_moves();
+		if (loc.size() > 0) {
+			myMap.move(this.myName,loc.get(0),Map.Type.GHOST);
+			return true;
+		}
 		return false;
 	}
 
