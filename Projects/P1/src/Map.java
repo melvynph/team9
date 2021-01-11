@@ -76,9 +76,9 @@ public class Map{
 			if (field.get(loc).contains(Map.Type.COOKIE)) {
 				String str = "tok_x" + loc.x +"_y" + loc.y;
 				cookie++;
-				locations.remove(Str);
+				locations.remove(str);
 				field.get(loc).remove(Map.Type.COOKIE);
-				return components.remove(Str);
+				return components.remove(str);
 			}
 			else {
 				return null;
