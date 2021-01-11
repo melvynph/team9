@@ -59,6 +59,7 @@ public class Ghost{
 			myMap.move(this.myName,loc.get(0),Map.Type.GHOST);
 			return true;
 		}
+		return false;
 	}
 
 	public boolean is_pacman_in_range() {
