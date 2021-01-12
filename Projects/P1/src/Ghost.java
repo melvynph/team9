@@ -1,5 +1,6 @@
 import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Ghost{
 	String myName;
@@ -37,26 +38,30 @@ public class Ghost{
 		if (!(myMap.getLoc(down).contains(Map.Type.WALL)) && (down.y <= 30)) {	// down
 			ans.add(down);
 		}
-		if (!(myMap.getLoc(ne).contains(Map.Type.WALL)) && (ne.y <= 30)) {	// down
-			ans.add(ne);
-		}
-		if (!(myMap.getLoc(nw).contains(Map.Type.WALL)) && (nw.y <= 30)) {	// down
-			ans.add(nw);
-		}
-		if (!(myMap.getLoc(se).contains(Map.Type.WALL)) && (se.y <= 30)) {	// down
-			ans.add(se);
-		}
-		if (!(myMap.getLoc(sw).contains(Map.Type.WALL)) && (sw.y <= 30)) {	// down
-			ans.add(sw);
-		}
+		//Diagonals
+//		if (!(myMap.getLoc(ne).contains(Map.Type.WALL)) && (ne.y <= 30)) {	// down
+//			ans.add(ne);
+//		}
+//		if (!(myMap.getLoc(nw).contains(Map.Type.WALL)) && (nw.y <= 30)) {	// down
+//			ans.add(nw);
+//		}
+//		if (!(myMap.getLoc(se).contains(Map.Type.WALL)) && (se.y <= 30)) {	// down
+//			ans.add(se);
+//		}
+//		if (!(myMap.getLoc(sw).contains(Map.Type.WALL)) && (sw.y <= 30)) {	// down
+//			ans.add(sw);
+//		}
 		
 		return ans;
 	}
 
 	public boolean move() {
-		ArrayList<Location> loc = this.get_valid_moves();
+		ArrayList<Location> loc = get_valid_moves();
 		if (loc.size() > 0) {
-			myMap.move(this.myName,loc.get(0),Map.Type.GHOST);
+			Random r = new Random();
+			int x = r.nextInt(loc.size());
+			myLoc = loc.get(x);
+			myMap.move(myName, loc.get(x), Map.Type.GHOST);
 			return true;
 		}
 		return false;
