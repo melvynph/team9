@@ -47,6 +47,11 @@ move in a corridor.
 - **Method Description:** This method returns all the valid moves that PacMan can make given his current position. Invalid moves include walls and out of bounds.
 - **Test Description:** Tested with JUnit Assert API to check if the result contains the correct valid moves in multiple locations.
 
+#### is_ghost_in_range()
+- **Type**: `() -> Bool`
+- **Method Description:**: This method checks its surroundings to see if any Ghosts are in attack range. The attack radius of a ghost is 1 in respect to their x and y coordinates. If any Ghosts are in the attack range, this method returns true otherwise it returns false.
+- **Test Description:**: Tested a ghost at (1,2) and pacman at (1,1), therefore it is true that there is a ghost in range since they are 1 apart.
+
 
 ### Ghost Class
 The Ghost Class implements the functionality of the Ghost component in the game.
@@ -61,6 +66,18 @@ move in a corridor.
 - **Type:** `() -> ArrayList`
 - **Method Description:** This method returns all the valid moves that a Ghost can make given its current position. Invalid moves include walls and out of bounds.
 - **Test Description:** Tested with JUnit Assert API to check if the result contains the correct valid moves in multiple locations.
+
+#### is_pacman_in_range()
+
+- **Type**: `() -> Bool`
+- **Method Description**: This method checks its surroundings to see if any Pacmans are in attack range. The attack radius of a pacman is 1 in respect to their x and y coordinates . If any Pacman are in the attack range, this method returns true otherwise it returns false.
+- **Test Description**: Tested a ghost at (1,2) and pacman at (1,1), therefore it is true that there is a pacman in range since they are 1 apart.
+
+#### attack()
+
+- **Type**: `() -> Bool`
+- **Method Description**: This method returns true if the the is_pacman_in_range() function returns true. this means that the ghost can attack, and was successful. 
+- **Test Description**: Tested a ghost at (1,2) and pacman at (1,1), therefore it is true that there is a ghost in range since they are 1 apart. This means that is_pacman_in_range() returns true, and attack() will return true as well. 
 
 
 ### Map Class
