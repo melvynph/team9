@@ -34,6 +34,12 @@ The PacMan Class implements the functionality of the PacMan component in the gam
 - **Test**: Tested pacman not being able to move in an enclosed space, then being able to
 move in a corridor.
 
+#### is_ghost_in_range()
+
+- **Type**: `() -> Bool`
+- **Description**: This method checks its surroundings to see if any Ghosts are in attack range. The attack radius of a ghost is 1 in respect to their x and y coordinates. If any Ghosts are in the attack range, this method returns true otherwise it returns false.
+- **Test**: Tested a ghost at (1,2) and pacman at (1,1), therefore it is true that there is a ghost in range since they are 1 apart.
+
 
 ### Ghost Class
 
@@ -45,6 +51,18 @@ The Ghost Class implements the functionality of the Ghost component in the game.
 - **Description**: Moves the Ghost component by calling the myMap object's move() method.
 - **Test**: Tested a red ghost not being able to move in an enclosed space, then being able to
 move in a corridor.
+
+#### is_pacman_in_range()
+
+- **Type**: `() -> Bool`
+- **Description**: This method checks its surroundings to see if any Pacmans are in attack range. The attack radius of a pacman is 1 in respect to their x and y coordinates . If any Pacman are in the attack range, this method returns true otherwise it returns false.
+- **Test**: Tested a ghost at (1,2) and pacman at (1,1), therefore it is true that there is a pacman in range since they are 1 apart.
+
+#### attack()
+
+- **Type**: `() -> Bool`
+- **Description**: This method returns true if the the is_pacman_in_range() function returns true. this means that the ghost can attack, and was successful. 
+- **Test**: Tested a ghost at (1,2) and pacman at (1,1), therefore it is true that there is a ghost in range since they are 1 apart. This means that is_pacman_in_range() returns true, and attack() will return true as well. 
 
 ### Map Class
 
