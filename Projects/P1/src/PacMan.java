@@ -91,6 +91,6 @@ public class PacMan{
 			return myMap.eatCookie(myName);
     	} else {
 			return null;
-    }
+    	}
 	}
 }

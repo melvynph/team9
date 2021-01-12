@@ -1,4 +1,3 @@
-import org.junit.Assert.assertTrue;
 import junit.framework.*;
 import java.awt.Color;
 import java.io.*;
@@ -6,9 +5,9 @@ import java.io.*;
 public class TestConsume extends TestCase {
 	
 	public void testConsume() throws FileNotFoundException {
-		Frame frame = new Frame();
+		NoFrame frame = new NoFrame();
 		PacMan pacman = frame.addPacMan(new Location(0, 0));
-		assertTure(pacman.consume() == null);
+		assertTrue(pacman.consume() == null);
 		//return null;	
 	}
 }

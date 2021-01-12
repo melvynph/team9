@@ -59,12 +59,20 @@ public class Map{
 			if (type.equals(Map.Type.PACMAN)) {
 				PacManComponent pacman = (PacManComponent) components.get(name);
 				pacman.setLocation(loc.x,loc.y);
+				locations.put(name,loc);
+				components.put(name,pacman);
+				field.get(loc).remove(Type.PACMAN);
+				this.add(name, loc, pacman, type);
 				return true;
 			}
 			
 			if (type.equals(Map.Type.GHOST)) {
 				GhostComponent ghost = (GhostComponent) components.get(name);
 				ghost.setLocation(loc.x,loc.y);
+				locations.put(name,loc);
+				components.put(name,ghost);
+				field.get(loc).remove(Type.GHOST);
+				this.add(name, loc, ghost, type);
 				return true;
 			}
 		}
@@ -101,10 +109,11 @@ public class Map{
 			Ghost ghost = new Ghost(Name, loc, this);
 			if (getLoc(loc).contains(Map.Type.GHOST) && ghost.is_pacman_in_range()) {
 				gameOver = true;
-				return gameOver;
+			} else {
+				gameOver = false;
 			}
 		}
-		return false;
+		return gameOver;
 	}
 
 	public JComponent eatCookie(String name) {
@@ -112,11 +121,13 @@ public class Map{
 		//the id for a cookie at (10, 1) is tok_x10_y1
 		if (locations.containsKey(name) && components.containsKey(name)) {
 			Location loc = locations.get(name);
-			if (field.get(loc).contains(Map.Type.COOKIE)) {
+			PacManComponent pacman = (PacManComponent) components.get(name);
+			if (field.get(loc).contains(Type.COOKIE) && field.get(loc).contains(Type.PACMAN)) {
 				String str = "tok_x" + loc.x +"_y" + loc.y;
 				cookies++;
 				locations.remove(str);
-				field.get(loc).remove(Map.Type.COOKIE);
+				field.get(loc).remove(Type.COOKIE);
+				this.add(name, loc, pacman, Type.PACMAN);
 				return components.remove(str);
 			}
 			else {

@@ -4,7 +4,7 @@ import java.io.*;
 
 public class TestAttack extends TestCase {
 
-	public void testAttack() throws FileNotFoundException{
+	public void testAttack() throws FileNotFoundException {
 		NoFrame frame = new NoFrame();
 
 		PacMan pacman = frame.addPacMan(new Location(1,1));

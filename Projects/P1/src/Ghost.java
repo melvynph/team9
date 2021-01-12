@@ -49,7 +49,7 @@ public class Ghost{
 		if (!(myMap.getLoc(sw).contains(Map.Type.WALL)) && (sw.y <= 30)) {	// down
 			ans.add(sw);
 		}
-
+		
 		return ans;
 	}
 
