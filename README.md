@@ -58,7 +58,7 @@ move in a corridor.
 - **Description**: This method checks its surroundings to see if any Pacmans are in attack range. The attack radius of a pacman is 1 in respect to their x and y coordinates . If any Pacman are in the attack range, this method returns true otherwise it returns false.
 - **Test**: Tested a ghost at (1,2) and pacman at (1,1), therefore it is true that there is a pacman in range since they are 1 apart.
 
-#### is_pacman_in_range()
+#### attack()
 
 - **Type**: `() -> Bool`
 - **Description**: This method returns true if the the is_pacman_in_range() function returns true. this means that the ghost can attack, and was successful. 
