@@ -99,14 +99,12 @@ public class Map{
 		if (locations.containsKey(Name)) {
 			Location loc = locations.get(Name);
 			Ghost ghost = new Ghost(Name, loc, this);
-			if (getLoc(loc).contains(Map.Type.GHOST) && ghost.is_ghost_in_range()) {
+			if (getLoc(loc).contains(Map.Type.GHOST) && ghost.is_pacman_in_range()) {
 				gameOver = true;
 				return gameOver;
 			}
 		}
-		else {
-			return false;
-		}
+		return false;
 	}
 
 	public JComponent eatCookie(String name) {
@@ -116,7 +114,7 @@ public class Map{
 			Location loc = locations.get(name);
 			if (field.get(loc).contains(Map.Type.COOKIE)) {
 				String str = "tok_x" + loc.x +"_y" + loc.y;
-				cookie++;
+				cookies++;
 				locations.remove(str);
 				field.get(loc).remove(Map.Type.COOKIE);
 				return components.remove(str);
