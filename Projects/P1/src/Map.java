@@ -99,7 +99,7 @@ public class Map{
 		if (locations.containsKey(Name)) {
 			Location loc = locations.get(Name);
 			Ghost ghost = new Ghost(Name, loc, this);
-			if (getLoc(loc).contains(Map.Type.Ghost) && ghost.is_ghost_in_range()) {
+			if (getLoc(loc).contains(Map.Type.GHOST) && ghost.is_ghost_in_range()) {
 				gameOver = true;
 				return gameOver;
 			}
