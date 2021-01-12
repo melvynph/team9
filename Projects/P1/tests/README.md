@@ -1,7 +1,7 @@
-### Project 1: PacMan ###
-       ***Team 9***
+# Project 1: PacMan #
+## **Team 9**
 
-## 1. Group Members Name
+## 1. Group Members
 Sarah Bang, Anjali Sharma, Rongjing Li, Zeeshan Shaikh
 
 
@@ -25,7 +25,7 @@ java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore your_test
 ex: java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
 ```
 
-## 4. List of the functions We Wrote
+## 4. List of the Functions We Wrote
 This section contains all of the functions our team wrote and implemented.
 
 ### PacMan Class
@@ -42,6 +42,11 @@ move in a corridor.
 - **Method Description:** This method checks to see if there is a 'power-cookie' located in Pacman's current coordinate. If there is, this method calls the eatCookie method from the Map Class, and returns the cookie component if the cookie a consumed, and null otherwise.
 - **Test Description:** This test uses JUnit Assert API to test if the consume method in PacMan class is functional. It created a new frame and pacman object, setted the inital position to (0, 0). According to Map.txt, there is a wall, so the pacman can't do anything with cookies anyway, and the method should return null if the method works.
 
+#### get_valid_moves()
+- **Type:** `() -> ArrayList`
+- **Method Description:** This method returns all the valid moves that PacMan can make given his current position. Invalid moves include walls and out of bounds.
+- **Test Description:** Tested with JUnit Assert API to check if the result contains the correct valid moves in multiple locations.
+
 
 ### Ghost Class
 The Ghost Class implements the functionality of the Ghost component in the game.
@@ -51,6 +56,11 @@ The Ghost Class implements the functionality of the Ghost component in the game.
 - **Description:** Moves the Ghost component by calling the myMap object's move() method.
 - **Test:** Tested a red ghost not being able to move in an enclosed space, then being able to
 move in a corridor.
+
+#### get_valid_moves()
+- **Type:** `() -> ArrayList`
+- **Method Description:** This method returns all the valid moves that a Ghost can make given its current position. Invalid moves include walls and out of bounds.
+- **Test Description:** Tested with JUnit Assert API to check if the result contains the correct valid moves in multiple locations.
 
 
 ### Map Class
@@ -70,6 +80,12 @@ The Map Class uses Java GUI to create the visual represenation of our game.
 - **Type:** `() -> JComponent`
 - **Method Description:** The method controls Pacman eating a cookie. When the function is able to successfully update display to eat a cookie it returns the Cookie component that has been eaten, otherwise it returns null.
 - **Test Description:** This test uses JUnit Assert API to test if the eatCookie method in Map class is functional. It created a new frame and pacman object, setted the inital position to (0, 0). According to Map.txt, there is a wall, so the pacman can't eat cookie, and the method should return null if the method works. And then the pacman shifts to (1, 1), at this point, the method should not return null.
+
+#### getLoc(Location loc)
+- **Type:** `(Location loc) -> HashSet<Type>`
+- **Method Description:** For the given location argument, this method returns what is currently at the location (Empty, Pacman, Cookie, Ghost, Wall).
+- **Test Description:** Tested with JUnit Assert API to check if the result contains the correct Types.
+
 
 
 -----
