@@ -6,7 +6,7 @@ Sarah Bang, Anjali Sharma, Rongjing Li, Zeeshan Shaikh
 
 
 ## 2. Image of Our Code Playing PacMan
-[image here]
+<img src="pacman.png" width="200" title="PacMan Game">
 
 
 ## 3. The Code from the Command Line (How to Run)
