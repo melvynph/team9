@@ -15,6 +15,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  # This workflow contains a single job called "build"
   compile:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -26,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: compile my code
+      - name: Compile The Code
         run: |
           javac -cp "src/" src/*.java
 
@@ -78,3 +79,40 @@ jobs:
         run: |
           javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestPacmanMove.java
           java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacmanMove
+
+  testGhostValidMoves:
+      # The type of runner that the job will run on
+      runs-on: ubuntu-latest
+      container: openjdk
+
+      steps:
+      # Runs a set of commands using the runners shell
+      - name: Test GhostValidMoves
+        run:
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestGhostValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
+
+  testMapGetLoc:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    steps:
+      # Runs a set of commands using the runners shell
+      - name: Test MapGetLoc
+        run:
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestMapGetLoc.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
+
+  testPacManValidMoves:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+    
+    steps:
+      # Runs a set of commands using the runners shell
+      - name: Test PacManValidMoves
+        run:
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestPacManValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+
