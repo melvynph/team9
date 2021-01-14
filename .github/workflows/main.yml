@@ -28,10 +28,58 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Compile The Code
-        run:
-          java -version
-          javac -version
+        run: |
           javac -cp "src/" src/*.java
+
+         
+  TestMapMove:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: compile and run map move tests
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestMapMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapMove
+
+  TestGhostMove:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: compile and run ghost move tests
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestGhostMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostMove
+
+  TestPacmanMove:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container: openjdk
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: compile and run pacman move tests
+        run: |
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestPacmanMove.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacmanMove
+
   testGhostValidMoves:
       # The type of runner that the job will run on
       runs-on: ubuntu-latest
@@ -41,8 +89,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test GhostValidMoves
         run:
-          javac -cp "junit-4.10.jar;." *.java
-          java -cp "junit-4.10.jar;." org.junit.runner.JUnitCore TestGhostValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestGhostValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestGhostValidMoves
 
   testMapGetLoc:
     # The type of runner that the job will run on
@@ -53,8 +101,8 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test MapGetLoc
         run:
-          javac -cp "junit-4.10.jar;." *.java
-          java -cp "junit-4.10.jar;." org.junit.runner.JUnitCore TestMapGetLoc
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestMapGetLoc.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestMapGetLoc
 
   testPacManValidMoves:
     # The type of runner that the job will run on
@@ -65,5 +113,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test PacManValidMoves
         run:
-          javac -cp "junit-4.10.jar;." *.java
-          java -cp "junit-4.10.jar;." org.junit.runner.JUnitCore TestPacManValidMoves
+          javac -cp "tests/junit-4.10.jar:src/:tests/" src/TestMapMove.java tests/TestPacManValidMoves.java
+          java -cp "tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+
