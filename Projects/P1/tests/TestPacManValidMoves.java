@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class TestPacManValidMoves extends TestCase {
 
 	public void testPacManValidMoves() throws FileNotFoundException{
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		//NoFrame frame = new NoFrame();
 
 		PacMan pacman = frame.addPacMan(new Location (1,3));

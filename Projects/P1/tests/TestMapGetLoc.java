@@ -7,7 +7,7 @@ import java.util.*;
 public class TestMapGetLoc extends TestCase {
 	
 	public void testMapGetLoc() throws FileNotFoundException {
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		//NoFrame frame = new NoFrame();
 
 		Ghost ghost = frame.addGhost(new Location (9,11), "name", Color.red);
