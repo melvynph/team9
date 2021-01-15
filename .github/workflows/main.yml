@@ -65,7 +65,7 @@ jobs:
       # Runs a single command using the runners shell
       - name: compile and run ghost move tests
         run: |
-          javac -cp "Projects/P1/tests/junit-4.10.jar:src/:tests/" src/*.java Projects/P1/tests/TestGhostMove.java
+          javac -cp "Projects/P1/tests/junit-4.10.jar:src/:tests/" Projects/P1/src/*.java Projects/P1/tests/TestGhostMove.java
           java -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestGhostMove
 
   TestPacmanMove:
@@ -81,8 +81,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: compile and run pacman move tests
         run: |
-          javac -cp "Projects/P1/tests/junit-4.10.jar:src/:tests/" Projects/P1/src/*.java Projects/P1/tests/TestPacmanMove.java
-          java -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestPacmanMove
+          javac -cp "Projects/P1/tests/junit-4.10.jar:src/:tests/" Projects/P1/src/*.java Projects/P1/tests/TestPacManMove.java
+          java -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestPacManMove
 
   TestGhostValidMoves:
       # The type of runner that the job will run on
@@ -111,7 +111,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test MapGetLoc
         run:
-          javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java tests/TestMapGetLoc.java
+          javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/TestMapGetLoc.java
           java -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestMapGetLoc
 
   TestPacManValidMoves:
@@ -126,5 +126,5 @@ jobs:
       - name: Test PacManValidMoves
         run:
           javac -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" Projects/P1/src/*.java Projects/P1/tests/TestPacManValidMoves.java
-          java -cp "Projects/P1/tests/junit-4.10.jar:src/:tests/" org.junit.runner.JUnitCore TestPacManValidMoves
+          java -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestPacManValidMoves
 
