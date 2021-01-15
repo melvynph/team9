@@ -28,6 +28,5 @@ public class TestPacManValidMoves extends TestCase {
 		 assertFalse("ERROR: OUT OF BOUNDS.", arr.contains(err2));
 		 assertTrue("ERROR: SHOULD EXIST.", arr.contains(tru1));
 		 assertTrue("ERROR: SHOULD EXIST.", arr.contains(tru2));
-		 assertTrue("ERROR: SHOULD EXIST.", arr.contains(tru3));
 	}
 }
