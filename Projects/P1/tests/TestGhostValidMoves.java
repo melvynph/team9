@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class TestGhostValidMoves extends TestCase {
 
 	public void testGhostValidMoves() throws FileNotFoundException{
-		MainFrame frame = new MainFrame();
+		NoFrame frame = new NoFrame();
 		//NoFrame frame = new NoFrame();
 
 		Ghost ghost = frame.addGhost(new Location (9,11), "name", Color.red);
@@ -20,12 +20,10 @@ public class TestGhostValidMoves extends TestCase {
 		Location err2 = new Location(8,11);
 		Location tru1 = new Location(9,12);
 		Location tru2 = new Location(10,11);
-		Location tru3 = new Location(10,12);
 
 		assertFalse("ERROR: OUT OF BOUNDS.", arr.contains(err1));
 		assertFalse("ERROR: OUT OF BOUNDS.", arr.contains(err2));
 		assertTrue("ERROR: SHOULD EXIST.", arr.contains(tru1));
 		assertTrue("ERROR: SHOULD EXIST.", arr.contains(tru2));
-		assertTrue("ERROR: SHOULD EXIST.", arr.contains(tru3));
 	}
 }
