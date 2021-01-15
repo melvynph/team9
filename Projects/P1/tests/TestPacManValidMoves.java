@@ -9,7 +9,7 @@ public class TestPacManValidMoves extends TestCase {
 		NoFrame frame = new NoFrame();
 		//NoFrame frame = new NoFrame();
 
-		PacMan pacman = frame.addPacMan(new Location (1,3));
+		PacMan pacman = frame.addPacMan(new Location (9,11));
 
 		//frame.initPlayers();
 
@@ -23,7 +23,6 @@ public class TestPacManValidMoves extends TestCase {
 		 Location err2 = new Location(8,11);
 		 Location tru1 = new Location(9,12);
 		 Location tru2 = new Location(10,11);
-		 Location tru3 = new Location(10,12);
 
 		 assertFalse("ERROR: OUT OF BOUNDS.", arr.contains(err1));
 		 assertFalse("ERROR: OUT OF BOUNDS.", arr.contains(err2));
