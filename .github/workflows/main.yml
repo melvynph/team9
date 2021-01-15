@@ -157,8 +157,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: compile and run map move tests
         run: |
-          javac -cp "Projects/P1/tests/junit-4.10.jar:src/:tests/" Projects/P1/src/*.java Projects/P1/tests/TestPacmanInRange.java
-          java -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestPacmanInRange
+          javac -cp "Projects/P1/tests/junit-4.10.jar:src/:tests/" Projects/P1/src/*.java Projects/P1/tests/TestPacManInRange.java
+          java -cp "Projects/P1/tests/junit-4.10.jar:Projects/P1/src/:Projects/P1/tests/" org.junit.runner.JUnitCore TestPacManInRange
       
   TestAttack:
     # The type of runner that the job will run on
