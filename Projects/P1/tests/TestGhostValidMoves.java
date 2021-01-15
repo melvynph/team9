@@ -20,7 +20,6 @@ public class TestGhostValidMoves extends TestCase {
 		Location err2 = new Location(8,11);
 		Location tru1 = new Location(9,12);
 		Location tru2 = new Location(10,11);
-		Location tru3 = new Location(10,12);
 
 		assertFalse("ERROR: OUT OF BOUNDS.", arr.contains(err1));
 		assertFalse("ERROR: OUT OF BOUNDS.", arr.contains(err2));
