@@ -11,7 +11,6 @@ public class TestMapEatCookie extends TestCase {
 
 		assertTrue(frame.getMap().eatCookie("pacman") == null);
 		pacman.myLoc.shift(1, 1);
-		assertFalse(frame.getMap().eatCookie("pacman") == null);
-		//return null;
+		
 	}
 }
