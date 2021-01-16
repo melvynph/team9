@@ -115,7 +115,7 @@ public class Map{
 				gameOver = false;
 			}
 		}
-		return gameOver;
+		return false;
 	}
 
 	public JComponent eatCookie(String name) {
