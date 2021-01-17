@@ -90,7 +90,7 @@ public class PacMan{
 		if(myMap.getLoc(down).contains(Map.Type.GHOST) && myMap.getLoc(curr).contains(Map.Type.PACMAN)){
 			return false;
 		}
-		return true;
+		return false;
 	}
 
 	public JComponent consume() {
