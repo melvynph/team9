@@ -17,14 +17,15 @@ public class Ghost{
 		// Initialization
 		ArrayList<Location> ans  = new ArrayList<>();
 
-		Location left = new Location(myLoc.x - 1, myLoc.y);
-		Location right = new Location(myLoc.x + 1, myLoc.y);
-		Location up = new Location(myLoc.x, myLoc.y - 1);
-		Location down = new Location(myLoc.x, myLoc.y + 1);
-		Location ne = new Location(myLoc.x - 1, myLoc.y + 1);
-		Location nw = new Location(myLoc.x - 1, myLoc.y - 1);
-		Location se = new Location(myLoc.x + 1, myLoc.y + 1);
-		Location sw = new Location(myLoc.x + 1, myLoc.y - 1);
+		Location left = new Location(myLoc.x - 9, myLoc.y);
+		Location right = new Location(myLoc.x + 8, myLoc.y);
+		Location up = new Location(myLoc.x, myLoc.y - 9);
+		Location down = new Location(myLoc.x, myLoc.y + 8);
+		// Diagonals (IGNORE THIS COMMENTED BLOCK)
+//		Location ne = new Location(myLoc.x - 1, myLoc.y + 1);
+//		Location nw = new Location(myLoc.x - 1, myLoc.y - 1);
+//		Location se = new Location(myLoc.x + 1, myLoc.y + 1);
+//		Location sw = new Location(myLoc.x + 1, myLoc.y - 1);
 
 		if (!(myMap.getLoc(left).contains(Map.Type.WALL)) && (left.x >= 0)) {	// left
 			ans.add(left);
@@ -38,7 +39,7 @@ public class Ghost{
 		if (!(myMap.getLoc(down).contains(Map.Type.WALL)) && (down.y <= 30)) {	// down
 			ans.add(down);
 		}
-		//Diagonals
+		// Diagonals (IGNORE THIS COMMENTED BLOCK)
 //		if (!(myMap.getLoc(ne).contains(Map.Type.WALL)) && (ne.y <= 30)) {	// down
 //			ans.add(ne);
 //		}
@@ -62,7 +63,7 @@ public class Ghost{
 			int x = r.nextInt(loc.size());
 			myLoc = loc.get(x);
 			myMap.move(myName, loc.get(x), Map.Type.GHOST);
-			return true;
+			return false;
 		}
 		return false;
 	}
@@ -76,16 +77,16 @@ public class Ghost{
 		Location curr = new Location(myLoc.x, myLoc.y);
 
 		if(myMap.getLoc(left).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return true;
+			return false;
 		}
 		if(myMap.getLoc(right).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return true;
+			return false;
 		}
 		if(myMap.getLoc(up).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return true;
+			return false;
 		}
 		if(myMap.getLoc(down).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return true;
+			return false;
 		}
 		return false;
 	}

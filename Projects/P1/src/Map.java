@@ -64,7 +64,7 @@ public class Map{
 				components.put(name,pacman);
 				field.get(prev).remove(type);
 				field.get(loc).add(type);
-				return true;
+				return false;
 			}
 
 			if (type.equals(Map.Type.GHOST)) {
@@ -75,28 +75,28 @@ public class Map{
 				components.put(name,ghost);
 				field.get(prev).remove(type);
 				this.add(name, loc, ghost, type);
-				return true;
+				return false;
 			}
 		}
-		return false;
+		return true;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
 		HashSet<Type> ans = new HashSet<>();
 		if (field.get(loc) != null && field.get(loc).equals(wallSet)) {
-			ans.add(Type.WALL);
+			ans.add(Type.EMPTY);
 		} else {
 			if (field.get(loc) == null || field.get(loc).equals(emptySet)) {
 				ans.add(Type.EMPTY);
 			} else if (field.get(loc) != null) {
 				if (field.get(loc).contains(Type.PACMAN)) {
-					ans.add(Type.PACMAN);
+					ans.add(Type.EMPTY);
 				}
 				if (field.get(loc).contains(Type.GHOST)) {
-					ans.add(Type.GHOST);
+					ans.add(Type.EMPTY);
 				}
 				if (field.get(loc).contains(Type.COOKIE)) {
-					ans.add(Type.COOKIE);
+					ans.add(Type.EMPTY);
 				}
 			}
 		}
