@@ -76,22 +76,22 @@ public class Ghost{
 		Location curr = new Location(myLoc.x, myLoc.y);
 
 		if(myMap.getLoc(left).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
 		if(myMap.getLoc(right).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
 		if(myMap.getLoc(up).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
 		if(myMap.getLoc(down).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	public boolean attack() {
-		if(is_ghost_in_range()){
+		if(is_pacman_in_range()){
 			myMap.attack(myName);
 			return true;
 		} else{
