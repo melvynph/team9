@@ -63,7 +63,7 @@ public class Ghost{
 			int x = r.nextInt(loc.size());
 			myLoc = loc.get(x);
 			myMap.move(myName, loc.get(x), Map.Type.GHOST);
-			return true;
+			return false;
 		}
 		return false;
 	}
