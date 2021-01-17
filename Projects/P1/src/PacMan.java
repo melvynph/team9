@@ -79,18 +79,18 @@ public class PacMan{
 		Location curr = new Location(myLoc.x, myLoc.y);
 
 		if(myMap.getLoc(left).contains(Map.Type.GHOST) && myMap.getLoc(curr).contains(Map.Type.PACMAN)){
-			return true;
+			return false;
 		}
 		if(myMap.getLoc(right).contains(Map.Type.GHOST) && myMap.getLoc(curr).contains(Map.Type.PACMAN)){
-			return true;
+			return false;
 		}
 		if(myMap.getLoc(up).contains(Map.Type.GHOST) && myMap.getLoc(curr).contains(Map.Type.PACMAN)){
-			return true;
+			return false;
 		}
 		if(myMap.getLoc(down).contains(Map.Type.GHOST) && myMap.getLoc(curr).contains(Map.Type.PACMAN)){
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	public JComponent consume() {
