@@ -88,7 +88,7 @@ public class Ghost{
 		if(myMap.getLoc(down).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
 			return false;
 		}
-		return true;
+		return false;
 	}
 
 	public boolean attack() {
