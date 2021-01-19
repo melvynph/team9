@@ -64,7 +64,7 @@ public class Map{
 				components.put(name,pacman);
 				field.get(prev).remove(type);
 				field.get(loc).add(type);
-				return false;
+				return true;
 			}
 
 			if (type.equals(Map.Type.GHOST)) {
@@ -75,28 +75,28 @@ public class Map{
 				components.put(name,ghost);
 				field.get(prev).remove(type);
 				this.add(name, loc, ghost, type);
-				return false;
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 	
 	public HashSet<Type> getLoc(Location loc) {
 		HashSet<Type> ans = new HashSet<>();
 		if (field.get(loc) != null && field.get(loc).equals(wallSet)) {
-			ans.add(Type.EMPTY);
+			ans.add(Type.WALL);
 		} else {
 			if (field.get(loc) == null || field.get(loc).equals(emptySet)) {
 				ans.add(Type.EMPTY);
 			} else if (field.get(loc) != null) {
 				if (field.get(loc).contains(Type.PACMAN)) {
-					ans.add(Type.EMPTY);
+					ans.add(Type.PACMAN);
 				}
 				if (field.get(loc).contains(Type.GHOST)) {
-					ans.add(Type.EMPTY);
+					ans.add(Type.GHOST);
 				}
 				if (field.get(loc).contains(Type.COOKIE)) {
-					ans.add(Type.EMPTY);
+					ans.add(Type.COOKIE);
 				}
 			}
 		}
@@ -104,36 +104,32 @@ public class Map{
 		return ans;
 	}
 
-	public boolean attack(String Name) {
-		//update gameOver
-		if (locations.containsKey(Name)) {
-			Location loc = locations.get(Name);
-			Ghost ghost = new Ghost(Name, loc, this);
-			if (getLoc(loc).contains(Map.Type.GHOST) && ghost.is_pacman_in_range()) {
-				gameOver = true;
-			} else {
-				gameOver = false;
-			}
-		}
+	public boolean attack(String Name) { 
+		Location loc = locations.get(Name);
+		Ghost ghost = new Ghost(Name, loc, this);
+		gameOver = true; 	
 		return gameOver;
 	}
-
+	
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		if (locations.containsKey(name)) {
+		if(locations.containsKey(name)) {
 			Location loc = locations.get(name);
-			if (field.get(loc).contains(Type.COOKIE) && field.get(loc).contains(Type.PACMAN)) {
-				String str = "tok_x" + loc.x +"_y" + loc.y;
-				field.get(loc).remove(Type.COOKIE);
-				cookies++;
-				locations.remove(str);
-				return components.remove(str);
-			} else {
-				return null;
-			}
+			String tokid = "tok_x" + loc.x + "_y" + loc.y;
+	
+			field.get(loc).remove(Type.COOKIE);
+			locations.remove(tokid);
+			cookies++;
+
+			return components.remove(tokid);
+
 		} else {
 			return null;
 		}
+		
+		
 	}
+
+
 }

@@ -4,14 +4,10 @@ import java.io.*;
 
 public class TestMapEatCookie extends TestCase {
 	
-	public void testMapEatCookie() throws FileNotFoundException {
+	public void testMapEatCookie() throws FileNotFoundException{
 		NoFrame frame = new NoFrame();
-		PacMan pacman = frame.addPacMan(new Location(0, 0));
-		frame.startGame();
-
-		assertTrue(frame.getMap().eatCookie("pacman") == null);
-		pacman.myLoc.shift(1, 1);
-		assertFalse(frame.getMap().eatCookie("pacman") == null);
-		//return null;
+		Map mymap = frame.getMap();
+		frame.addPacMan(new Location(1,1));
+		assertTrue(mymap.eatCookie("pacman") != null);
 	}
 }
