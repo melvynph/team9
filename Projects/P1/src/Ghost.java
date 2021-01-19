@@ -17,10 +17,10 @@ public class Ghost{
 		// Initialization
 		ArrayList<Location> ans  = new ArrayList<>();
 
-		Location left = new Location(myLoc.x - 9, myLoc.y);
-		Location right = new Location(myLoc.x + 8, myLoc.y);
-		Location up = new Location(myLoc.x, myLoc.y - 9);
-		Location down = new Location(myLoc.x, myLoc.y + 8);
+		Location left = new Location(myLoc.x - 1, myLoc.y);
+		Location right = new Location(myLoc.x + 1, myLoc.y);
+		Location up = new Location(myLoc.x, myLoc.y - 1);
+		Location down = new Location(myLoc.x, myLoc.y + 1);
 		// Diagonals (IGNORE THIS COMMENTED BLOCK)
 //		Location ne = new Location(myLoc.x - 1, myLoc.y + 1);
 //		Location nw = new Location(myLoc.x - 1, myLoc.y - 1);
@@ -76,17 +76,18 @@ public class Ghost{
 		Location down = new Location(myLoc.x, myLoc.y + 1);
 		Location curr = new Location(myLoc.x, myLoc.y);
 
+
 		if(myMap.getLoc(left).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
 		if(myMap.getLoc(right).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
 		if(myMap.getLoc(up).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
 		if(myMap.getLoc(down).contains(Map.Type.PACMAN) && myMap.getLoc(curr).contains(Map.Type.GHOST)){
-			return false;
+			return true;
 		}
 		return false;
 	}
