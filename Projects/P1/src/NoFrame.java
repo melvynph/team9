@@ -39,7 +39,6 @@ public class NoFrame {
 	{
 		
 		myMap = new Map(dim);
-	
 		File text = new File("Projects/P1/src/assets/Map.txt");
 		Scanner scnr = new Scanner(text);
 		int row = 0;
