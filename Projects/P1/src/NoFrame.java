@@ -38,9 +38,8 @@ public class NoFrame {
 	public NoFrame() throws FileNotFoundException
 	{
 		
-		myMap = new Map(dim);	
-		File text = new File("src/assets/Map.txt");
-
+		myMap = new Map(dim);
+		File text = new File("Projects/P1/src/assets/Map.txt");
 		Scanner scnr = new Scanner(text);
 		int row = 0;
 		while(scnr.hasNextLine()){
