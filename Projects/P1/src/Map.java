@@ -105,17 +105,10 @@ public class Map{
 	}
 
 	public boolean attack(String Name) { 
-		Location pac_loc;
-		if (!locations.containsKey("pacman")) {
-			return false;
-		}
-		pac_loc = locations.get("pacman");
-
-		if (move(Name, pac_loc, Map.Type.GHOST) == true && field.get(pac_loc).contains(Map.Type.PACMAN) == true && field.get(pac_loc).contains(Map.Type.GHOST) == true) {
-				gameOver = true; //this is literally all you guys have to do
-				return true;//this is literally all you guys have to do. You dont need all these extra checks
-		}
-		return false;
+		Location loc = locations.get(Name);
+		Ghost ghost = new Ghost(Name, loc, this);
+		gameOver = true; 	
+		return gameOver;
 	}
 	
 	public JComponent eatCookie(String name) {
