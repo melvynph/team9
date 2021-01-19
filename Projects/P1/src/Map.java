@@ -84,19 +84,19 @@ public class Map{
 	public HashSet<Type> getLoc(Location loc) {
 		HashSet<Type> ans = new HashSet<>();
 		if (field.get(loc) != null && field.get(loc).equals(wallSet)) {
-			ans.add(Type.EMPTY);
+			ans.add(Type.WALL);
 		} else {
 			if (field.get(loc) == null || field.get(loc).equals(emptySet)) {
 				ans.add(Type.EMPTY);
 			} else if (field.get(loc) != null) {
 				if (field.get(loc).contains(Type.PACMAN)) {
-					ans.add(Type.EMPTY);
+					ans.add(Type.PACMAN);
 				}
 				if (field.get(loc).contains(Type.GHOST)) {
-					ans.add(Type.EMPTY);
+					ans.add(Type.GHOST);
 				}
 				if (field.get(loc).contains(Type.COOKIE)) {
-					ans.add(Type.EMPTY);
+					ans.add(Type.COOKIE);
 				}
 			}
 		}
