@@ -121,19 +121,22 @@ public class Map{
 	public JComponent eatCookie(String name) {
 		//update locations, components, field, and cookies
 		//the id for a cookie at (10, 1) is tok_x10_y1
-		if (locations.containsKey(name)) {
+		if(locations.containsKey(name)) {
 			Location loc = locations.get(name);
-			if (field.get(loc).contains(Type.COOKIE) && field.get(loc).contains(Type.PACMAN)) {
-				String str = "tok_x" + loc.x +"_y" + loc.y;
-				field.get(loc).remove(Type.COOKIE);
-				cookies++;
-				locations.remove(str);
-				return components.remove(str);
-			} else {
-				return null;
-			}
+			String tokid = "tok_x" + loc.x + "_y" + loc.y;
+	
+			field.get(loc).remove(Type.COOKIE);
+			locations.remove(tokid);
+			cookies++;
+
+			return components.remove(tokid);
+
 		} else {
 			return null;
 		}
+		
+		
 	}
+
+
 }
